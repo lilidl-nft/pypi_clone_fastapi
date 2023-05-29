@@ -5,7 +5,7 @@ import uvicorn
 
 app = fastapi.FastAPI()
 
-fastapi_chameleon.global_init("C:\Users\licdi\Desktop\Python\pypi_clone_fastapi\pypi_clone_fastapi\templates")
+fastapi_chameleon.global_init(r"C:\Users\licdi\Desktop\Python\pypi_clone_fastapi\templates")
 
 @app.get("/")
 @template(template_file="index.html")
@@ -19,8 +19,5 @@ def index():
 
 
 
-
-
-
 if __name__ == "__main__":
-    uvicorn.run(app)
+    uvicorn.run(app, host="127.0.0.1", port=8001)
