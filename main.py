@@ -8,13 +8,27 @@ from views import packages
 
 app = fastapi.FastAPI()
 
-fastapi_chameleon.global_init(r"C:\Users\licdi\Desktop\Python\pypi_clone_fastapi\templates")
+def main():
+    configure()
+    uvicorn.run(app, host="127.0.0.1", port=8000)
+    
+def configure():
+    configure_templates()
+    configure_routes()
+    
+    
+def configure_templates():
+    fastapi_chameleon.global_init(r"C:\Users\licdi\Desktop\Python\pypi_clone_fastapi\templates")
 
-app.include_router(home.router)
-app.include_router(account.router)
-app.include_router(packages.router)
+def configure_routes():
+    app.include_router(home.router)
+    app.include_router(account.router)
+    app.include_router(packages.router)
+
 
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    main()
+else:
+    configure()

@@ -6,7 +6,7 @@ import uvicorn
 router = fastapi.APIRouter()
 
 @router.get("/")
-@template(template_file="index.html")
+@template(template_file="home/index.pt")
 
 def index(user: str = "anon"):
     return {
@@ -16,5 +16,6 @@ def index(user: str = "anon"):
     }
     
 @router.get("/about")
+@template()
 def about():
     return{}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pypi</title>
+    <style>
+        body {
+            background-color: #b9b9dd;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Pypi site</h1>
+<div>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+<div class="main-content">
+    <div metal:define-slot="content" tal:omit-tag="True">No content</div>
+    </div>
+
+<footer>
+    footer: Thanks for visiting, contact us at:<br>
+    <br>
+    twitter: @thepsf<br>
+    facebook: ... 
+</footer>
+
+</body>
+</html>
